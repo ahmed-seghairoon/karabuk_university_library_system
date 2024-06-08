@@ -29,6 +29,29 @@
 .header{
     width: 100%;
     height: 550px;
-    background-color: var(--karabuk-dark-blue);
-    margin-bottom: 40px;
+    margin-bottom: 90px;
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header-title{
+    color: rgb(0, 0, 0);
+}
+
+.header-container{
+    background: var(--karabuk-dark-blue);
+}
+
+.search-bar{
+    filter: invert(100%);
+    margin-top: 40px;
+    width: 400px;
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
 }
