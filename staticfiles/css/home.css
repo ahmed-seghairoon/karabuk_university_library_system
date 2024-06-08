@@ -1,0 +1,34 @@
+:root{
+    --karabuk-red: #dc3545;
+    --karabuk-dark-blue: #253b80;
+}
+
+.book-cover{
+    height: 270px;
+    width: 200px;
+}
+
+.books-section{
+    margin: 50px 0;
+}
+
+.category{
+    margin-bottom: 25px;
+    display: flex;
+    gap: 7px;
+}
+
+.category div{
+    width: 5px;
+    height: 33px;
+    border-radius: 5px;
+    background: var(--karabuk-red);
+}
+
+
+.header{
+    width: 100%;
+    height: 550px;
+    background-color: var(--karabuk-dark-blue);
+    margin-bottom: 40px;
+}

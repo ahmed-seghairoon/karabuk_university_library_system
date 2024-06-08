@@ -1,12 +1,32 @@
 {% extends "base.html" %}
 {% block content %}
+{% load static %}
 
-<main class="container mt-5">
-    <h3>Latest Arrivals</h3>
-    <div>
-        <div>
-            
+<main>
+    <div class="header-container">
+        <header class="header" style="background: url({% static "images/home/world-map.png" %}) no-repeat center;background-size: cover;">
+            <h1 class="header-title">Over 10 books from all Around the World</h1>
+            <h2 class="header-title">looking for specific a book?</h2>
+            <form action="">
+
+                <input placeholder="Search Books" type="text" name="" id="" class="search-bar">
+            </form>
+        </header>
+    </div>
+    <div class="container mt-5">
+        {% for category, books in data.items %}
+        <div class="books-section">
+            <h3 class="category"><div></div> {{category}}</h3>
+            <div>
+                {% for book in books %}
+                <div>
+                    <div class="book-cover rounded" style="background: url({{book.image.url}}) no-repeat center;background-size: cover;"></div>
+                    <p>{{book.name}}</p>
+                </div>
+                {% endfor %}
+            </div>
         </div>
+        {% endfor %}
     </div>
 </main>
 
