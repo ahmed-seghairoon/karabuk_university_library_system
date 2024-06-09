@@ -4,7 +4,7 @@
 <main class="container">
     <div class="books-section">
         <h3 class="category"><div></div> Search Results</h3>
-        <div class="books-container">
+        <div class="books-container" style="flex-wrap: wrap;">
             {% for book in books %}
             <a href="{% url 'book_details' book.id %}">
                 <div>
