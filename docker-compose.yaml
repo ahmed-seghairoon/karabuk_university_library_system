@@ -1,0 +1,42 @@
+version: '3'
+services:
+  db:
+    image: mysql:8
+    container_name: db
+    restart: always
+    volumes:
+      - data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: karabuk_university_library_system
+      MYSQL_USER: ahmed
+      MYSQL_PASSWORD: password
+    ports:
+      - "7000:3306"
+    healthcheck:
+      test: ["CMD", "mysql", "-h", "localhost", "-u", "root", "-p password", "-e", "SELECT 1"]
+      timeout: 10s
+      retries: 3
+
+  backend:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: app
+    command: sh -c "python3 manage.py migrate --noinput && python3 manage.py collectstatic --noinput && python manage.py runserver 0.0.0.0:8000"
+    restart: always
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - NAME=karabuk_university_library_system
+      - HOST=db
+      - PORT=3306
+      - USER=root
+      - PASSWORD=password
+    depends_on:
+      db:
+        condition: service_healthy
+volumes:
+  data:
