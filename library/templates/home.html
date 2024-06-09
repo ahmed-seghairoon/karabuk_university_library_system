@@ -10,9 +10,8 @@
             </h1>
             {% endif %}
             <h2 class="header-title">looking for specific a book?</h2>
-            <form action="">
-
-                <input placeholder="Search Books" type="text" name="" id="" class="search-bar">
+            <form action="{% url "search_books" %}" method="get">
+                <input placeholder="Search Books" type="text" name="book_name" class="search-bar">
             </form>
         </header>
     </div>

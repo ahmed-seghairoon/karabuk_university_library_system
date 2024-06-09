@@ -50,3 +50,8 @@ class ChangePasswordView(PasswordChangeView):
     form_class = forms.ChangePasswordForm
     success_url = reverse_lazy('home')
     template_name = 'change-password.html'
+
+
+@login_required(login_url='login')
+def search_books(request):
+    return render(request,'search-book.html')
