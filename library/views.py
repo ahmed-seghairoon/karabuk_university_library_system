@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login as auth_login, logout as auth_logout
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth.views import PasswordChangeView
+from django.urls import reverse_lazy
 from . import models, forms
 
 
@@ -42,3 +45,8 @@ def book_details(request, id):
     book.views += 1
     book.save()
     return render(request,"book-details.html", {'book': book})
+
+class ChangePasswordView(PasswordChangeView):
+    form_class = forms.ChangePasswordForm
+    success_url = reverse_lazy('home')
+    template_name = 'change-password.html'

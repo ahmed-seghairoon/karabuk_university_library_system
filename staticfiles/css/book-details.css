@@ -2,8 +2,12 @@
     margin-top:75px;
 }
 
-.book-cover{
+.b-book-cover{
     width: 300px;
     height: 396px;
     border-radius: 5px;
+}
+
+.b-book-info{
+    max-width: calc(100% - 400px);
 }
