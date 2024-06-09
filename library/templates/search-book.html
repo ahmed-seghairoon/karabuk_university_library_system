@@ -1,8 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
 {% load static %}
-<main>
-    
+<main class="container">
+    <div class="books-section">
+        <h3 class="category"><div></div> Search Results</h3>
+        <div class="books-container">
+            {% for book in books %}
+            <a href="{% url 'book_details' book.id %}">
+                <div>
+                    <div class="book-cover rounded" style="background: url({{book.image.url}}) no-repeat center;background-size: cover;"></div>
+                    <p class="book-title">{{book.name}}</p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
 </main>
 
 {% endblock content %}

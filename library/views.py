@@ -54,4 +54,12 @@ class ChangePasswordView(PasswordChangeView):
 
 @login_required(login_url='login')
 def search_books(request):
-    return render(request,'search-book.html')
+    if request.GET:
+        book_name = request.GET.get('book_name')
+        if book_name is None:
+            return redirect('home')
+        
+        books = models.Book.objects.filter(name__icontains=book_name)
+        return render(request,'search-book.html', {'books':books})
+    else:
+        return redirect('home')
