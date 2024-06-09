@@ -15,7 +15,7 @@ services:
       - "7000:3306"
     healthcheck:
       test: ["CMD", "mysql", "-h", "localhost", "-u", "root", "-p password", "-e", "SELECT 1"]
-      timeout: 10s
+      timeout: 30s
       retries: 3
 
   backend:
