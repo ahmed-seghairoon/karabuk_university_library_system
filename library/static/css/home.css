@@ -9,7 +9,7 @@
 }
 
 .books-section{
-    margin: 50px 0;
+    margin: 30px 0;
 }
 
 .category{
@@ -54,4 +54,24 @@
     outline: none;
     border: none;
     border-radius: 20px;
+}
+
+.book-title{
+    text-align: center;
+    margin-top: 1px;
+    width: 200px;
+    color: rgb(32, 32, 32);
+    padding: 0px 1px;
+}
+
+.books-container{
+    display: flex;
+    gap: 25px;
+    overflow-x: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.books-container::-webkit-scrollbar {
+    display: none;
 }

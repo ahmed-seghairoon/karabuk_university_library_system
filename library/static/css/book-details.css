@@ -1,0 +1,9 @@
+.books-page{
+    margin-top:75px;
+}
+
+.b-book-cover{
+    width: 300px;
+    height: 396px;
+    border-radius: 5px;
+}

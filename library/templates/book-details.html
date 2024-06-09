@@ -1,10 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
 {% load static %}
-<main class="container">
-    <div style="background: url({{book.image.url}}) no-repeat center;background-size: cover;">
-        .
-    </div>
+<main class="container books-page">
+    <div class="d-flex">
+        <div class="b-book-cover" style="background: url({{book.image.url}}) no-repeat center;background-size: cover;">
+        </div>
+        <div class="ml-5">
+            <h1>{{book.name}} {{book.edition}}th edition</h1>
+            <p>
+                by 
+                {% for task in book.author.all %} 
+                {{task.name}} {% if not forloop.last %},{% endif %}
+                {% endfor %}
+            </p>
+        </div>
+        </div>
+    <p class="float-right mt-5">{{book.description}}</p>
+
 </main>
 
 {% endblock content %}
