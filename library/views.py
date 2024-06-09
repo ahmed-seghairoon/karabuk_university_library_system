@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login as auth_login, logout as auth_logout
 from django.contrib.auth.decorators import login_required
 from . import models, forms
@@ -34,3 +34,9 @@ def logout(request):
     if request.user.is_authenticated:
         auth_logout(request)
     return redirect("login")
+
+
+@login_required(login_url='login')
+def book_details(request, id):
+    book = get_object_or_404(models.Book, pk=id)
+    return render(request,"book-details.html", {'book': book})

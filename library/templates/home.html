@@ -22,10 +22,12 @@
             <h3 class="category"><div></div> {{category}}</h3>
             <div>
                 {% for book in books %}
-                <div>
-                    <div class="book-cover rounded" style="background: url({{book.image.url}}) no-repeat center;background-size: cover;"></div>
-                    <p>{{book.name}}</p>
-                </div>
+                <a href="{% url 'book_details' book.id %}">
+                    <div>
+                        <div class="book-cover rounded" style="background: url({{book.image.url}}) no-repeat center;background-size: cover;"></div>
+                        <p>{{book.name}}</p>
+                    </div>
+                </a>
                 {% endfor %}
             </div>
         </div>
