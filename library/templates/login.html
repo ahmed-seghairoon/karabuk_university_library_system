@@ -19,10 +19,10 @@
             <h5 class="mx-3">Karabuk University Library</h5>
         </div>
         <form class="form-group" action="{% url "login" %}" method="post">
-            {% csrf_token %}
             {{form}}
-
+            
             <button class="btn btn-primary mt-3 btn-block">Login</button>
+            {% csrf_token %}
         </form>
     </div>
 

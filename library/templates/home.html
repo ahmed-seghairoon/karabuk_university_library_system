@@ -1,11 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 {% load static %}
-
 <main>
     <div class="header-container">
         <header class="header" style="background: url({% static "images/home/world-map.png" %}) no-repeat center;background-size: cover;">
-            <h1 class="header-title">Over 10 books from all Around the World</h1>
+            {% if user.is_authenticated %}
+            <h1 class="header-title">
+                Welcome, {{request.user.first_name}} {{request.user.last_name}}        
+            </h1>
+            {% endif %}
             <h2 class="header-title">looking for specific a book?</h2>
             <form action="">
 
