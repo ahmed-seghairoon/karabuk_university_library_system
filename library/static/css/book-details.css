@@ -7,3 +7,7 @@
     height: 396px;
     border-radius: 5px;
 }
+
+.b-book-info{
+    max-width: calc(100% - 400px);
+}
