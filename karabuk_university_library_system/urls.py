@@ -24,6 +24,4 @@ admin.site.site_header = 'Karabuk University Library Management System'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('library.urls')),
-    # path(r'^accounts/login/$', 'django.contrib.auth.views.login', {'template_name': 'admin/login.html'}),
-    path('accounts/', include('django.contrib.auth.urls'))
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

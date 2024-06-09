@@ -1,0 +1,18 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.logo{
+    height: 45px;
+    margin-bottom: 20px;
+}
+
+.small-middle-container{
+	width: 450px;
+    padding: 25px;
+    border-radius: 10px;
+}
