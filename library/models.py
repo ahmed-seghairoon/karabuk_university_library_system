@@ -35,6 +35,7 @@ class Book(models.Model):
     edition = models.PositiveSmallIntegerField()
     category = models.ForeignKey(Category, on_delete=models.PROTECT)
     created_at = models.DateTimeField(auto_now_add=True)
+    views = models.PositiveIntegerField()
 
     def __str__(self) -> str:
         return self.name

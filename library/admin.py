@@ -13,6 +13,6 @@ class AuthorAdmin(admin.ModelAdmin):
 
 @admin.register(models.Book)
 class BookAdmin(admin.ModelAdmin):
-    list_display = ['id','name','image','category','stock','edition','created_at']
+    list_display = ['id','name','image','category','stock','views','edition','created_at']
     filter_horizontal = ('author',)
     list_filter = ["category"]
